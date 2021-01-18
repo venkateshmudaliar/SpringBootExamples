@@ -1,0 +1,75 @@
+1. Added URI Location logic to UserController
+	- when user posts - it returns a response code and additional paramter in header: location : URI of newly added value
+	
+2. Added Custom Exception logic
+	- created custom exception model class - defines params to be shown when exception occurrs
+	- created custom exception controller class - which handles different kind of exceptions and returns the appropriate response using custom exception model class
+	
+3. Added Validations
+	- from java Validation API
+	- added in model and controller methods
+	- defined an exception is Custom Exception controller to be called when validation error occurs
+	
+4. HATEOAS
+	- adding links ie uri to other controller methods in the response being sent
+	
+5. Internationalization
+	- added multiple locale specific property files and picked values from them using controller and main class locale resolver
+	
+6. Content Negotiation
+	- Return data in xml
+	- added jackson dataformat xml dependency
+	- request - header -> Add "Accept"=application/xml
+	
+7. SWAGGER Documentation
+	- Added Dependency for Swagger
+	- Added the Swagger Config class with customizations for Swagger UI
+	- URLS: http://localhost:8889/v2/api-docs http://localhost:8889/swagger-ui.html
+	
+	
+8. MONITORING - Actuator and HAL browser
+	- Added Actuator Dependency
+	- Exposed modules to be access in properties - management.endpoints.web.exposure.include=*
+	- URL: 	http://localhost:8889/actuator
+	- HAL browser has some issue with Spring Plugin Core so didnt work out
+
+	
+9. STATIC FILTERING - not sending specific fields in response
+	- Using @JsonIgnore for just single field
+	- Using @JsonIgnoreProperties(value= {"field1, field2"}) - for class level
+
+	
+10. DYNAMIC FILTERING - not sending fields according to calls
+	- Defined in Controller and Filter is marked in Model class
+	- ex: users_filtered_values URI in UserController
+
+11. BASIC AUTHENTICATION - username password for accessing Controller methods
+	- Added Security Depedency
+	- Add Authorization while calling - default - username-'user' & password from console
+	- We can custom username and password in application.properties
+
+12. H2 Database
+	- This can be added - in memory database	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
